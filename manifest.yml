@@ -1,9 +1,12 @@
+---
 applications:
-- disk_quota: 1024M
-  name: demodoi
-  command: npx serve -s build
-  path: .
-  instances: 1
-  memory: 64M
+- name: Owen-Agar
+  memory: 512M
+  disk_quota: 1G
+  buildpack: nodejs_buildpack
+  host: Owen-Agar
+  domain: mybluemix.net
+  command: node server/server.js
+  timeout: 180
   env:
-    DIFF_ENV: testing
+    env_type: production
